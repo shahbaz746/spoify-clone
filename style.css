@@ -1,0 +1,156 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+body{
+    background-color: black;
+    color: white;
+}
+
+
+.left {
+    width: 25vw;
+    padding: 10px;
+}
+.right{
+    width: 75vw;
+}
+
+.home{
+}
+
+.home ul li{
+    display: flex;
+    gap: 15px;
+    width: 14px;
+    list-style: none;
+    padding-top: 14px;
+    font-weight: bold;
+}
+.libarary{
+    min-height: 75vh;
+    position: relative;;
+}
+.heading{
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    padding-top: 14px;
+    padding: 23px 14px;
+    font-weight: bold;
+    align-items: center;
+    font-size: 13px;
+}
+.right{
+    margin: 16px 0;
+}
+
+
+.footer{
+ display: flex;
+ font-size: 10px;
+ color: gray;
+ gap: 13px;
+ position: absolute;
+ bottom: 0;
+ padding: 10px 0; 
+}
+
+.footer a {
+    color: gray;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(34, 34, 34);
+}
+
+.header > *{
+    padding: 20px;
+}
+
+.spotifyplaylist{
+    padding: 16px;
+}
+
+.cardCantainer{
+    margin: 30px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    max-height: 70vh;
+}
+.card{
+    width: 200px;
+    padding-top: 10px;
+    border-radius: 5px;
+    background-color: #252525;
+    position: relative;
+}
+.card > *{
+    padding-top: 10px;
+}
+
+.card img{
+    width: 100%;
+    object-fit: contain;
+}
+.play-button {
+    width: 30px;
+    height: 30px;
+    padding: 4px;
+    display: flex;
+    position: absolute;
+    top: 168px;
+    right: 17px;
+
+  }
+
+  .play-button circle {
+    fill: green;
+  }
+
+  .play-button polygon {
+    fill: black;
+  }
+  .buttons > *{
+    margin: 0 12px;
+  }
+
+  .singup{
+    background-color: rgb(34, 34, 34);
+    color: #e2dddd83;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  .singup:hover{
+    font-size: 17px;
+    color: white;
+  }
+  .login{
+    background-color: white;
+    border-radius: 21px;
+    color: black;
+    padding: 10px;
+    width: 79px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  .login:hover{
+    font-weight: bold;
+    font-size: 17px;
+  }
+
+  .nav i{
+    margin: 10px 5px;
+    gap: 5px;
+  }
