@@ -157,11 +157,14 @@ body{
   }
  
   .playbar{
-    position: absolute;
-    bottom: 0;
+    position: fixed;
+    bottom: 20px;
     background-color: rgb(81, 88, 81);
     width: 90%;
     padding: 12px;
+    width: 70vw;
+    border-radius: 30px;
+    padding-right: 7px ;
   }
   .songsbuttons{
     display: flex;
@@ -170,9 +173,63 @@ body{
 
   }
 
+  .songList{
+    height: 344px;
+    overflow: scroll;
+    margin-bottom: 44px ;
+  }
+
   .songList ul{
-    padding: 0 42px;
+    padding: 0 12px;
   }
   .songList ul li{
     list-style-type:decimal ;
+    display: flex;
+    gap: 12px;
+    cursor: pointer;
+    padding: 12px 0;
+    border: 1px solid white;
+    margin: 12px 0;
+    padding: 13px;
+    border-radius: 5px;
+    justify-content: space-between;
+  }
+  .songList .info{
+    font-size: 13px;
+    width: 334px;
+  }
+
+
+  .seekbar{
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    width: 97%;
+    background-color:  rgb(228, 224, 224);
+  }
+  .circle{
+    width: 13px;
+    height: 13px;
+    border-radius: 13px;
+    background-color: rgb(248, 238, 238);
+    position: relative;
+    bottom: 5px;
+    left: 0%;
+    transition: left 0.5s;
+  }
+
+  .songsbuttons i{
+cursor: pointer;
+  }
+  #play{
+    cursor: pointer;
+  }
+  .songinfo, .songtime{
+    color: white;
+    padding: 0 12px;
+  }
+
+  .abovebar{
+    display: flex;
+    justify-content: space-between;
   }
