@@ -23,19 +23,26 @@ async function getSongs() {
 
 function formatSeconds(seconds) {
     const mins = Math.floor(seconds / 60);
-    const secs = seconds % 60;
-    return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    const secs = Math.floor(seconds / 60);
+    const paddedMins = mins.toString().padStart(2, '0');
+    const paddedSecs = secs.toString().padStart(2, '0');
+    return `${paddedMins}:${paddedSecs}`;
   }
   
   
+  
 
 
-const palyMusic = (track)=>{
+const palyMusic = (track, Pause=false)=>{
 //   let audio = new Audio("/songs/" + track)
 currentSong.src = "/songs/" + track;
+if(!Pause){
+    currentSong.play()
+    play.src = "paused.svg"
+}
 currentSong.play()
 play.src = "paused.svg"
-document.querySelector(".songinfo").innerHTML = track
+document.querySelector(".songinfo").innerHTML = decodeURI(track)
 document.querySelector(".songtime").innerHTML = "00:00 / 00:00"
 
 }
@@ -45,6 +52,7 @@ document.querySelector(".songtime").innerHTML = "00:00 / 00:00"
 async function main(){
     
     let songs = await getSongs();
+    palyMusic(songs[0], true)
     console.log(songs)
     let songUL = document.querySelector(".songList").getElementsByTagName("ul")[0  ];
     for (const song of songs) {
@@ -97,6 +105,14 @@ play.addEventListener("click", ()=>{
 currentSong.addEventListener("timeupdate", ()=>{
       console.log(currentSong.currentTime, currentSong.duration)
       document.querySelector(".songtime").innerHTML = `${formatSeconds(currentSong.currentTime)}/${formatSeconds(currentSong.duration)}`
+      document.querySelector(".circle").style.left = (currentSong.currentTime/currentSong.duration) * 100 + "%";
+})
+
+
+document.querySelector(".seekbar").addEventListener("click", e=>{
+    let persent = (e.offsetX/e.target.getBoundingClientRect().width) * 100 +"%";
+    document.querySelector(".circle").style.left = persent
+    currentSong.currentTime = ((currentSong.duration) * persent)/100;
 })
 
 
